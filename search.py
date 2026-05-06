@@ -7,7 +7,14 @@ def index_of(target, lst):
 
     Ejemplo: index_of("Black", ["Red", "Green", "Black"]) -> 2
     """
-    return "ANSWER HERE"  # Remove this line and implement
+
+    result=-1
+    for i in range(len(lst)):
+        if lst[i]==target:
+            if result == -1:
+                result = i
+    return result
+
 
 
 def index_of_by_index(target, lst, start):
@@ -18,7 +25,18 @@ def index_of_by_index(target, lst, start):
 
     Ejemplo: index_of_by_index("Black", ["Red", "Black", "Green", "Black"], 2) -> 3
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    contador=0
+    result = -1
+    for i in range(len(lst)):
+        if contador>= start:
+         if lst[i] == target:
+            if result==-1:
+             result = i
+            contador+=1
+
+        else:
+            contador+=1
+    return result
 
 
 def index_of_empty(lst):
@@ -28,4 +46,13 @@ def index_of_empty(lst):
 
     Ejemplo: index_of_empty(["Red", "", "Green"]) -> 1
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    result = -1
+    for i in range(len(lst)):
+        if lst[i] == "":
+            if result==-1:
+             result = i
+    return result
+
+colors =   ["Red", "Green", "", "", "Pink", "", "Black"]
+print(index_of_empty(colors))
+#print(index_of_by_index("Black", colors, 1))
